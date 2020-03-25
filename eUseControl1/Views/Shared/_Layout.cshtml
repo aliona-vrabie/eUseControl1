@@ -1,0 +1,65 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">/
+    <link href="~/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/assets/css/style/css")
+    @Styles.Render("~bundles/assets/css/animate/css")
+    @Styles.Render("~bundles/assets/css/magnific-popup/css")
+    @Styles.Render("~bundles/assets/css/aos/css")
+    @Styles.Render("~bundles/assets/css/bootstrap-datepicker/css")
+    @Styles.Render("~bundles/assets/css/jquery.timepicker/css")
+    @Styles.Render("~bundles/assets/css/flaticon/css")
+    @Styles.Render("~bundles/assets/css/icomoon/css")
+    @Styles.Render("~bundles/assets/css/open-iconic-bootstrap.min.css")
+    @Styles.Render("~bundles/assets/css/owl.carousel.min.css")
+    @Styles.Render("~bundles/assets/css/owl.theme.default.min.css")
+    @Styles.Render("~bundles/assets/css/ionicons.min.css")
+
+
+    <!--Add local styles, mostly for plugins css fille-->
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+    <!--Primary Home style-->
+    @Styles.Render("~/bundles/main/css")
+</head>
+<body >
+    <div class="wrapper">
+        <!--Header-->
+        <nav>
+            @Html.Partial("_Header");
+        </nav>
+
+
+        <!--main view-->
+        <section id="home-section" class="hero">
+            @RenderBody()
+
+
+            <!--footer-->
+
+            @Html.Partial("_Footer")
+        </section>
+       
+
+
+        <!--Section for main scripts render-->
+        @Scripts.Render("~/Scripts/jquery-3.4.1.min.js")
+        @Scripts.Render("~/bundles/bootstrap/js")
+
+
+        <!--Handler for local scripts-->
+        @RenderSection("scripts", required: false)
+
+
+    </div>
+</body>
+</html>
